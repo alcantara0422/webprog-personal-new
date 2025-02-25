@@ -1,0 +1,118 @@
+:root {
+  --primary-dark-brown: #5C4033;
+  --secondary-dark-brown: #8B4513;
+  --light-brown: #DEB887;
+  --cream: #FAEBD7;
+  --text-dark: #2C1810;
+  --text-light: #F5F5DC;
+  --footer-height: 60px;
+  --navbar-height: 70px;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Arial, sans-serif;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--cream);
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  position: relative;
+}
+
+.main-content {
+  flex: 1;
+  padding-top: var(--navbar-height);
+  min-height: calc(100vh - var(--navbar-height) - var(--footer-height));
+  position: relative;
+}
+
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+  height: 100%;
+  animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+}
+
+button:focus {
+  outline: 2px solid var(--secondary-dark-brown);
+  outline-offset: 2px;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary-dark-brown);
+  border-radius: 6px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--secondary-dark-brown);
+}
+
+/* Selection color */
+::selection {
+  background-color: var(--secondary-dark-brown);
+  color: var(--cream);
+}
+
+/* Focus visible outline */
+:focus-visible {
+  outline: 3px solid var(--secondary-dark-brown);
+  outline-offset: 2px;
+}
+
+@media (max-width: 768px) {
+  .content-container {
+    padding: 1rem;
+  }
+}
