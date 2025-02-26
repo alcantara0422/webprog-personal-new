@@ -38,6 +38,28 @@ body {
   flex-direction: column;
   min-height: 100vh;
   position: relative;
+  overflow: hidden;
+}
+
+.background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
+}
+
+.content-overlay {
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(250, 235, 215, 0.85); /* Semi-transparent cream background */
 }
 
 .main-content {
